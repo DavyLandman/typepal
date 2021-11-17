@@ -26,9 +26,9 @@ jobs:
       - name: Cache Maven packages
         uses: actions/cache@v2
         with:
-          path: ~/.m2
-          key: m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: m2
+          path: ~/.m2/repositories
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
 
       - name: Compile and Typechek 
         run: mvn -B compile
@@ -36,16 +36,17 @@ jobs:
       - name: Test
         run: mvn -B test
 
-      - name: Publish Test Report on github action
-        if: ${{ always() && github.event_name != 'pull_request' }} # to bad this doesn't work nicely with external pull requests
-        uses: scacap/action-surefire-report@v1
-        with:
-          check_name: "Test Report"
+#      - name: Publish Test Report on github action
+#        if: ${{ always() && github.event_name != 'pull_request' }} # to bad this doesn't work nicely with external pull requests
+#        uses: scacap/action-surefire-report@v1
+#        with:
+#          check_name: "Test Report"
 
       - name: cleanup tests to reduce jar size
         run: |
           rm -r src/examples
           rm -r target/classes/examples
+          ls -alh target/
 
       - name: Attach artifact
         id: build-artifact
