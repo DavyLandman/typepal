@@ -1,6 +1,6 @@
 # TypePal
 
-An experiment in type checker generation. _Warning: work in progress!_
+An experiment in type checker generation. 
 
 From the user perspective the basic idea is as follows:
 
