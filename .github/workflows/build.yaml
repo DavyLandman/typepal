@@ -30,11 +30,11 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Compile and Typechek 
-        run: mvn -B compile
-
-      - name: Test
-        run: mvn -B test
+#      - name: Compile and Typechek 
+#        run: mvn -B compile
+#
+#      - name: Test
+#        run: mvn -B test
 
 #      - name: Publish Test Report on github action
 #        if: ${{ always() && github.event_name != 'pull_request' }} # to bad this doesn't work nicely with external pull requests
