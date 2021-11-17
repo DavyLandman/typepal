@@ -2,7 +2,7 @@
 
 An experiment in type checker generation. 
 
-From the user perspective the basic idea is as follows:
+From the user perspective the basic idea is as follows: 
 
 1. Start with a Rascal grammar of the language of interest, say, MiniML.
 2. Write functions for specific language constructs
