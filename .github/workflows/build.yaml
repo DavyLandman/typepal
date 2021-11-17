@@ -42,11 +42,10 @@ jobs:
         with:
           check_name: "Test Report"
 
-#      - name: cleanup tests to reduce jar size
-#        run: |
-#          rm -r src/examples
-#          rm -r target/classes/examples
-#          ls -alh target/
+      - name: cleanup tests to reduce jar size
+        run: |
+          rm -r target/classes/examples
+          ls -alh target/
 
       - name: Attach artifact
         id: build-artifact
