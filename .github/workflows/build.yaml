@@ -30,8 +30,8 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-#      - name: Compile and Typechek 
-#        run: mvn -B compile
+      - name: Compile and Typechek 
+        run: mvn -B compile
 #
 #      - name: Test
 #        run: mvn -B test
